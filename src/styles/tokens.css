@@ -1,0 +1,170 @@
+/* The Forged Editorial: Design System Tokens */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* Organic Forge Core Palette */
+  --color-cream: #e6dcc8;               /* Warm sand/bone */
+  --color-forge-base: #1c1512;          /* Deep warm dark espresso/forge iron */
+  --color-forge-light: #281f1b;         /* Lighter warm dark */
+  --color-forge-lighter: #382d27;       /* Card backgrounds */
+  --color-forge-dark: #120d0b;          /* Darkest shadow core */
+  --color-rust: #d6491e;                /* Glowing forge orange */
+  --color-leather: #8b5a2b;             /* Traditional leather brown */
+
+  /* Default Surface Mapping (Rich Warm Dark Theme) */
+  --color-surface: var(--color-forge-base);
+  --color-surface-container-lowest: var(--color-forge-dark);
+  --color-surface-container-low: var(--color-forge-light);
+  --color-surface-container-high: var(--color-forge-lighter);
+  --color-surface-container-highest: #4a3c35;
+  
+  --color-on-surface: var(--color-cream);
+  --color-on-surface-variant: #ae9e8e;
+  
+  --color-primary: var(--color-cream);
+  --color-primary-container: var(--color-forge-light);
+  --color-on-primary: var(--color-forge-dark);
+  
+  --color-secondary: var(--color-rust);
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fe7440;
+
+  --color-tertiary: var(--color-leather);
+  --color-on-tertiary: var(--color-cream);
+  
+  --color-outline: #5c4d44;
+  --color-outline-variant: #382d27;
+  
+  --color-error: #ba1a1a;
+  
+  /* Typography */
+  --font-family-headline: 'Noto Serif', serif;
+  --font-family-body: 'Work Sans', sans-serif;
+  
+  /* Spacing Scale (Base scale: roughly ~0.33rem increments based on Stitch instructions) */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;       /* Button side padding */
+  --spacing-5: 1.5rem;
+  --spacing-6: 2rem;       /* List separation vertical whitespace */
+  --spacing-8: 3rem;
+  --spacing-10: 4rem;
+  --spacing-12: 5rem;
+  --spacing-16: 5.5rem;    /* Wait, the Stitch md says spacing-16 is 5.5rem */
+  --spacing-20: 7rem;      /* And spacing-20 is 7rem */
+  --spacing-24: 8.5rem;    /* And spacing-24 is 8.5rem */
+  
+  /* Shape */
+  --border-radius-0: 0px;  /* Hard Edge philosophy */
+  
+  /* Shadows */
+  /* Ambient Shadow: blur 40px, opacity 6%, color tinted with on-surface (#1b1d0e) */
+  --shadow-ambient: 0 10px 40px rgba(27, 29, 14, 0.06);
+}
+
+/* Global resets and typography setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-body);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  background-image: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-headline);
+  margin-top: 0;
+  font-weight: 500;
+  color: var(--color-primary);
+  line-height: 1.1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p, li, label, span {
+  font-family: var(--font-family-body);
+  line-height: 1.6;
+}
+
+button {
+  font-family: var(--font-family-body);
+  cursor: pointer;
+  border-radius: var(--border-radius-0);
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Utility / Typographic Scale CSS classes mappings */
+.display-lg {
+  font-size: 3.5rem;   /* For Hero Statements */
+  letter-spacing: -0.02em;
+}
+
+.display-md {
+  font-size: 2.75rem;
+  letter-spacing: -0.01em;
+}
+
+.title-lg {
+  font-size: 2rem;
+}
+
+.title-md {
+  font-size: 1.5rem;
+}
+
+.body-lg {
+  font-size: 1.125rem;
+}
+
+.body-md {
+  font-size: 1rem;
+}
+
+.label-md {
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.label-sm {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Responsive Mixin Adjustments using variables (media queries typically written per component, 
+   but we can set some fluid typography here if desired) */
+@media (max-width: 768px) {
+  .display-lg { font-size: 2.5rem; }
+  .display-md { font-size: 2rem; }
+}
+
+/* Placeholder Utility */
+.placeholder-image {
+  background-color: var(--color-outline-variant);
+  color: var(--color-on-surface-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-4);
+  font-family: var(--font-family-body);
+}
+
+/* Ghost Border Utility */
+.ghost-border {
+  border: 1px solid var(--color-outline-variant);
+}

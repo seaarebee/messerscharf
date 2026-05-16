@@ -1,0 +1,137 @@
+.product-section {
+  padding: var(--spacing-24) var(--spacing-8);
+  background-color: var(--color-surface);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: var(--spacing-16);
+  max-width: 600px;
+}
+
+.section-title {
+  margin-bottom: var(--spacing-6);
+  color: var(--color-primary);
+}
+
+.section-desc {
+  color: var(--color-on-surface-variant);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-8);
+}
+
+.product-card {
+  background-color: var(--color-surface-container-low);
+  transition: background-color 0.3s ease;
+  opacity: 0;
+  transform: translateY(40px) scale(0.92);
+  will-change: opacity, transform;
+  border-radius: var(--border-radius-0);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  background-color: var(--color-surface-container-high);
+}
+
+.product-image-container {
+  width: 100%;
+  border-radius: var(--border-radius-0);
+  overflow: hidden;
+  background-color: var(--color-surface);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product-info {
+  padding: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.steel-type {
+  color: var(--color-on-surface-variant);
+  margin-bottom: var(--spacing-6);
+  font-family: var(--font-family-body);
+}
+
+/* Removed footer, price, and secondary button styles as this is now a pure gallery */
+
+.custom-knives-cta {
+  text-align: center;
+  margin-top: var(--spacing-16);
+  padding: var(--spacing-16) var(--spacing-8);
+  background-color: var(--color-surface-container-highest);
+  border: 2px solid var(--color-outline);
+  border-left: 12px solid var(--color-secondary);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  border-radius: var(--border-radius-0);
+  transition: transform 0.3s ease;
+}
+
+.custom-knives-cta:hover {
+  transform: translateY(-4px);
+}
+
+.custom-knives-cta .display-md {
+  margin-bottom: var(--spacing-6);
+  color: var(--color-secondary);
+}
+
+.custom-knives-cta p {
+  max-width: 600px;
+  margin: 0 auto var(--spacing-8);
+}
+
+.custom-knives-cta .btn-primary {
+  display: inline-block;
+  font-size: 1.125rem;
+  padding: var(--spacing-4) var(--spacing-8);
+  box-shadow: 0 8px 24px rgba(169, 55, 2, 0.3);
+}
+
+/* Tablet */
+@media (max-width: 1280px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .product-section {
+    padding: var(--spacing-16) var(--spacing-5);
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-knives-cta {
+    margin-top: var(--spacing-12);
+    padding: var(--spacing-12) var(--spacing-5);
+    border-left-width: 8px;
+  }
+
+  .custom-knives-cta .display-md {
+    font-size: 2.25rem;
+  }
+
+  .custom-knives-cta .btn-primary {
+    display: block;
+    width: 100%;
+    font-size: 1.25rem;
+    padding: var(--spacing-5) var(--spacing-4);
+  }
+}

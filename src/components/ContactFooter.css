@@ -1,0 +1,107 @@
+.contact-footer {
+  background-color: var(--color-surface-container-highest);
+  padding-top: var(--spacing-24);
+}
+
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-8) var(--spacing-20);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-16);
+}
+
+.footer-brand {
+  max-width: 400px;
+}
+
+.footer-brand h2 {
+  margin-bottom: var(--spacing-4);
+}
+
+.footer-text {
+  color: var(--color-on-surface-variant);
+  margin-bottom: var(--spacing-8);
+}
+
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-10);
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.footer-heading {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.footer-link {
+  color: var(--color-on-surface-variant);
+  transition: color 0.2s ease;
+  font-family: var(--font-family-body);
+}
+
+.footer-link:hover {
+  color: var(--color-primary);
+}
+
+.footer-social-link {
+  color: var(--color-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  margin-top: var(--spacing-4);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--color-outline-variant);
+  padding: var(--spacing-6) var(--spacing-8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.body-sm {
+  font-size: 0.875rem;
+  font-family: var(--font-family-body);
+}
+
+.text-secondary {
+  color: var(--color-on-surface-variant);
+}
+
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-16);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-footer {
+    padding-top: var(--spacing-16);
+  }
+  .footer-container {
+    padding: 0 var(--spacing-5) var(--spacing-16);
+    gap: var(--spacing-16);
+  }
+  .footer-links-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-10);
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--spacing-6) var(--spacing-5);
+  }
+}
