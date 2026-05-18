@@ -84,7 +84,8 @@ export default function ProcessSection() {
           <p>Härte und Zähigkeit im richtigen Gleichgewicht — das ist die Seele jedes Messers, das ich fertige.</p>
         </>
       ),
-      mediaType: 'video'
+      mediaType: 'images',
+      images: ['/images/06.1_Härten.jpeg', '/images/06.2_Härten.jpeg']
     },
     {
       step: '07',
@@ -124,7 +125,15 @@ export default function ProcessSection() {
               <div className="body-lg text-secondary" style={{ lineHeight: '1.8', display: 'flex', flexDirection: 'column', gap: '1rem' }}>{item.desc}</div>
             </div>
             <div className="step-media-column">
-              {item.image ? (
+              {item.images ? (
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', width: '100%', height: '100%' }}>
+                  {item.images.map((img, i) => (
+                    <div key={i} style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--elevation-2)', height: '100%' }}>
+                      <img src={img} alt={`${item.title} ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+                  ))}
+                </div>
+              ) : item.image ? (
                 <div style={{ width: '100%', height: '100%', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--elevation-2)' }}>
                   <img src={item.image} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
@@ -136,6 +145,8 @@ export default function ProcessSection() {
                 <div className="media-placeholder ghost-border">
                   {item.mediaType === 'video' ? (
                     <span className="label-md">▶ Video: {item.title}</span>
+                  ) : item.mediaType === 'images' ? (
+                    <span className="label-md">Fotos: {item.title}</span>
                   ) : (
                     <span className="label-md">Foto: {item.title}</span>
                   )}
