@@ -129,13 +129,13 @@ export default function ProcessSection() {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', width: '100%', height: '100%' }}>
                   {item.images.map((img, i) => (
                     <div key={i} style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--elevation-2)', height: '100%' }}>
-                      <img src={img} alt={`${item.title} ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src={img} alt={`Schmiedeprozess: ${item.title} - Teil ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                   ))}
                 </div>
               ) : item.image ? (
                 <div style={{ width: '100%', height: '100%', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--elevation-2)' }}>
-                  <img src={item.image} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src={item.image} alt={`Schmiedeprozess: ${item.title}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
               ) : item.video ? (
                 <div style={{ width: '100%', height: '100%', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--elevation-2)' }}>

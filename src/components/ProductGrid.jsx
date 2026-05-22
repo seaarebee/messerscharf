@@ -86,7 +86,7 @@ export default function ProductGrid() {
           <div key={product.id} className="product-card">
             <div className="product-image-container">
               {product.image ? (
-                <img src={product.image} alt={product.name} className="product-image" />
+                <img src={product.image} alt={`Handgeschmiedetes Messer: ${product.name}`} className="product-image" />
               ) : (
                 <div className="placeholder-image" style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span className="label-sm">Image: {product.name}</span></div>
               )}
