@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './CourseSection.css';
 
 const courses = [
@@ -111,6 +111,30 @@ const courses = [
 ];
 
 export default function CourseSection() {
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    if (!gridRef.current) return;
+
+    const thresholds = Array.from({ length: 100 }, (_, i) => i / 100);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const progress = Math.min(entry.intersectionRatio / 0.35, 1);
+          entry.target.style.opacity = progress;
+          entry.target.style.transform = `translateY(${(1 - progress) * 40}px) scale(${0.92 + progress * 0.08})`;
+        });
+      },
+      { threshold: thresholds }
+    );
+
+    const cards = gridRef.current.querySelectorAll('.course-card');
+    cards.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="courses" className="course-section">
       <div className="course-container">
@@ -122,7 +146,7 @@ export default function CourseSection() {
           </p>
         </div>
 
-        <div className="course-grid">
+        <div className="course-grid" ref={gridRef}>
           {courses.map(course => (
             <div key={course.id} className="course-card">
               <div className="course-card-header">
