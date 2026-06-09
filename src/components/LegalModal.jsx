@@ -13,13 +13,13 @@ export default function LegalModal({ isOpen, onClose, activeDoc }) {
           <p>
             Meister Michael Barth<br />
             Messerschmiede Barth<br />
-            Gewerbepark 12<br />
-            4800 Attnang-Puchheim<br />
+            Pfaffing 11<br />
+            5222 Munderfing<br />
             Österreich
           </p>
           <h3>Kontakt</h3>
           <p>
-            Telefon: +43 (0) 123 456789<br />
+            Telefon: +43 (0) 660 2361777<br />
             E-Mail: kontakt@messerschmied.at
           </p>
           <h3>Umsatzsteuer-ID</h3>
@@ -47,7 +47,7 @@ export default function LegalModal({ isOpen, onClose, activeDoc }) {
           <h3>§1 Geltungsbereich</h3>
           <p>Diese Geschäftsbedingungen gelten für alle Bestellungen, die Privatpersonen und Unternehmer über diese Website oder im direkten Kontakt tätigen.</p>
           <h3>§2 Vertragspartner</h3>
-          <p>Der Vertrag kommt zustande mit der Messerschmiede Barth, Inh. Michael Barth, Gewerbepark 12, 4800 Attnang-Puchheim, Österreich.</p>
+          <p>Der Vertrag kommt zustande mit der Messerschmiede Barth, Inh. Michael Barth, Pfaffing 11, 5222 Munderfing, Österreich.</p>
           <h3>§3 Sonderanfertigungen</h3>
           <p>Bei der Anfertigung von individuellen Damastmustern ist der Umtausch ausgeschlossen, da es sich um exklusive Maßanfertigungen handelt.</p>
         </>

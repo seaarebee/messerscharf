@@ -50,8 +50,8 @@ export default function ContactFooter() {
           <div className="footer-column">
             <span className="label-sm footer-heading">Standort</span>
             <p className="body-md footer-text">
-              Gewerbepark 12<br />
-              4800 Attnang-Puchheim<br />
+              Pfaffing 11<br />
+              5222 Munderfing<br />
               Oberösterreich, Österreich
             </p>
             {/* Placeholder Instagram icon/link */}

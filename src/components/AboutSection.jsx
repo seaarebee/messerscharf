@@ -36,7 +36,7 @@ export default function AboutSection() {
           
           <div className="about-stats">
             <div className="stat-item ghost-border" style={{ borderTop: '4px solid var(--color-tertiary)' }}>
-              <span className="title-lg">300+</span>
+              <span className="title-lg">200+</span>
               <span className="label-sm">Lagen Damast</span>
             </div>
             <div className="stat-item ghost-border" style={{ borderTop: '4px solid var(--color-tertiary)' }}>
