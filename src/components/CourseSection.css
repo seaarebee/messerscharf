@@ -1,6 +1,5 @@
 .course-section {
   padding: var(--spacing-24) var(--spacing-8);
-  /* The boundary is defined by the background color shift: Surface to container-low */
   background-color: var(--color-surface-container-low); 
 }
 
@@ -10,8 +9,8 @@
 }
 
 .course-header {
-  margin-bottom: var(--spacing-16);
-  max-width: 650px;
+  margin-bottom: var(--spacing-12);
+  max-width: 700px;
 }
 
 .course-header .kicker {
@@ -19,7 +18,7 @@
 }
 
 .course-header h2 {
-  margin-bottom: var(--spacing-6);
+  margin-bottom: var(--spacing-4);
 }
 
 .course-header p {
@@ -29,45 +28,283 @@
 .course-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-10);
+  gap: var(--spacing-8);
+  align-items: stretch;
 }
 
 .course-card {
   background-color: var(--color-surface);
-  padding: var(--spacing-10);
+  border: 1px solid var(--color-outline-variant);
+  padding: var(--spacing-8);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.course-card:hover {
+  border-color: var(--color-outline);
+}
+
+.course-card-header {
+  margin-bottom: var(--spacing-6);
+  border-bottom: 1px solid var(--color-outline-variant);
+  padding-bottom: var(--spacing-4);
 }
 
 .course-meta {
   display: block;
   color: var(--color-secondary);
-  margin-bottom: var(--spacing-4);
+  font-weight: 600;
+  margin-bottom: var(--spacing-2);
 }
 
 .course-title {
-  margin-bottom: var(--spacing-4);
+  margin-bottom: var(--spacing-2);
+  font-family: var(--font-family-headline);
+  line-height: 1.2;
+}
+
+.course-subtitle {
+  color: var(--color-on-surface-variant);
+  font-style: italic;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.course-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  flex-grow: 1;
+  margin-bottom: var(--spacing-8);
 }
 
 .course-desc {
   color: var(--color-on-surface-variant);
-  margin-bottom: var(--spacing-10);
-  flex-grow: 1;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  white-space: pre-line;
 }
 
-.course-footer {
+.course-details-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.details-header {
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  font-size: 0.75rem;
+  border-bottom: 1px solid var(--color-outline-variant);
+  padding-bottom: var(--spacing-1);
+  margin: 0;
+}
+
+.course-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--color-on-surface);
+}
+
+.checkmark-icon {
+  color: var(--color-secondary);
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.course-details-table {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.details-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 2px solid var(--color-primary);
+  font-size: 0.9rem;
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px dashed var(--color-outline-variant);
+}
+
+.details-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.details-label {
+  color: var(--color-on-surface-variant);
+  font-weight: 500;
+}
+
+.details-value {
+  color: var(--color-on-surface);
+  font-weight: 500;
+}
+
+.course-quote {
+  font-family: var(--font-family-headline);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-on-surface);
+  border-left: 2px solid var(--color-secondary);
+  padding-left: var(--spacing-4);
+  margin: var(--spacing-4) 0 var(--spacing-2) 0;
+}
+
+.course-card-footer {
+  border-top: 1px solid var(--color-outline-variant);
   padding-top: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.price-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.price-row .label-sm {
+  color: var(--color-on-surface-variant);
 }
 
 .course-price {
   font-family: var(--font-family-headline);
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 600;
   color: var(--color-primary);
+}
+
+.price-detail {
+  color: var(--color-on-surface-variant);
+  font-style: italic;
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.booking-cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3);
+}
+
+.btn-whatsapp, .btn-call, .btn-whatsapp-large, .btn-call-large {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-body);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border-radius: var(--border-radius-0);
+  border: 1px solid transparent;
+  text-align: center;
+}
+
+.btn-whatsapp {
+  background-color: var(--color-surface-container-high);
+  border-color: var(--color-outline);
+  color: var(--color-on-surface);
+  font-size: 0.8rem;
+  padding: var(--spacing-3) var(--spacing-2);
+}
+
+.btn-whatsapp:hover {
+  background-color: #25d366;
+  border-color: #25d366;
+  color: #120d0b;
+  transform: translateY(-2px);
+}
+
+.btn-call {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: 0.8rem;
+  padding: var(--spacing-3) var(--spacing-2);
+}
+
+.btn-call:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+  transform: translateY(-2px);
+}
+
+.course-section-footer {
+  margin-top: var(--spacing-16);
+  padding: var(--spacing-8);
+  border: 1px solid var(--color-outline-variant);
+  background-color: var(--color-surface);
+  text-align: center;
+  max-width: 100%;
+}
+
+.course-section-footer p {
+  margin-bottom: var(--spacing-6);
+  color: var(--color-on-surface);
+}
+
+.general-booking-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.btn-call-large {
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: 0.9rem;
+}
+
+.btn-call-large:hover {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp-large {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: 0.9rem;
+}
+
+.btn-whatsapp-large:hover {
+  background-color: #25d366;
+  border-color: #25d366;
+  color: #120d0b;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 1280px) {
@@ -79,11 +316,27 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 768px) {
   .course-section {
     padding: var(--spacing-16) var(--spacing-5);
   }
-  .course-grid {
-    grid-template-columns: 1fr;
+  .course-section-footer {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+  .general-booking-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-call-large, .btn-whatsapp-large {
+    width: 100%;
   }
 }
+
